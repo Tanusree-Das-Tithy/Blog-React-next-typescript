@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const boxNav =
-	"box-border h-6 bg-slate-300 hover:bg-slate-400 p-4 align-middle mt-4 text-center rounded-sm";
+	"box-border h-4 bg-slate-300 hover:bg-slate-400 p-4 align-middle mt-4 text-center rounded-sm";
 
 export default function Header() {
 	return (

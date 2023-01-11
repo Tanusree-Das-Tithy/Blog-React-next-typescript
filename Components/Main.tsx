@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./Header";
-import Footer from "./Footer";
-import Feature from "./Feature";
+import Footer from "./Footer.tsx";
+import Feature from "./Feature.tsx";
 export default function Main() {
 	return (
 		<div className="flex w-full">
@@ -38,7 +38,7 @@ export default function Main() {
 						<br />
 						<Link
 							className="text-cyan-500 hover:text-cyan-700"
-							href={"http://localhost:3000/Post/4"}
+							href={"http://localhost:3000/Post/main-page"}
 						>
 							see more...
 						</Link>

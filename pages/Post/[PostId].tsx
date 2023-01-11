@@ -1,6 +1,6 @@
 /** @format */
 import { useRouter } from "next/router";
-import TemplateData from "./PostData";
+import TemplateData from "./PostData.tsx";
 const postStyle = "grid ml-20 mr-20 place-items-center mt-10";
 function postData(num) {
 	let i = 0 + num;
@@ -24,17 +24,17 @@ export default function postDetail() {
 	const router = useRouter();
 	const postId = router.query.PostId;
 
-	if (postId === "1") {
+	if (postId === "place-to-go-on-winter") {
 		return <div className={postStyle}>{postData(0)}</div>;
 	}
-	if (postId === "2") {
+	if (postId === "place-to-go-on-summer") {
 		return <div className={postStyle}>{postData(1)}</div>;
 	}
 
-	if (postId === "3") {
+	if (postId === "place-to-go-on-spring") {
 		return <div className={postStyle}>{postData(2)}</div>;
 	}
-	if (postId == "4") {
+	if (postId == "main-page") {
 		return <div className={postStyle}>{postData(3)}</div>;
 	}
 }
