@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./Header";
-import Footer from "./Footer.tsx";
+import Footer from "./Footer.js";
 import Feature from "./Feature.tsx";
+
 export default function Main() {
 	return (
-		<div className="flex w-full">
+		<div className=" block md:flex w-full">
 			<section className="w-full font-bold">
 				<Header />
 				<br />
@@ -15,16 +16,16 @@ export default function Main() {
 					Welcome to Travel Blog
 				</h1>
 				<br />
-				<div className="ml-20 mr-20 flex grid-md:grid-cols-2 space-x-8">
+				<div className="relative px-16 block lg:flex lg:grid-cols-2 space-x-0 lg:gap-8">
 					<Image
 						src="/main.jpg"
 						alt="main Logo"
-						className=" h-min w-1/2"
+						className=" h-full w-full md:w-1/2 object-cover"
 						width={500}
 						height={500}
 						priority
 					/>
-					<p className="w-1/2 text-justify">
+					<p className="w-full mt-4 lg:mt-0 lg:w-1/2 text-justify">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt pulvinar est
 						eget aliquam. Nullam vel gravida purus, et porta lorem. Morbi malesuada sapien nec
 						pretium consectetur. Ut est quam, accumsan in urna nec, suscipit cursus elit. Cras
@@ -38,7 +39,7 @@ export default function Main() {
 						<br />
 						<Link
 							className="text-cyan-500 hover:text-cyan-700"
-							href={"http://localhost:3000/Post/main-page"}
+							href={"http://localhost:3001/Post/main-page"}
 						>
 							see more...
 						</Link>

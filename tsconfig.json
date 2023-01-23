@@ -15,6 +15,21 @@
 		"jsx": "preserve",
 		"incremental": true
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"Components/Main.js",
+		"pages/Post/PostData.js",
+		"pages/Post/index.js",
+		"pages/Post/[PostId].js",
+		"Components/Footer.js",
+		"Components/Header.js",
+		"Components/Feature.tsx",
+		"pages/navs/index.js",
+		"pages/navs/[id].js",
+		"pages/ninjas/index.js",
+		"pages/ninjas/[userid].js"
+	],
 	"exclude": ["node_modules"]
 }
