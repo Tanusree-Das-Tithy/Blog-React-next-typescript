@@ -2,7 +2,7 @@
 export const MainData = [
 	{
 		id: 0,
-		image: "/main.jpg",
+		image: "/Images/main.jpg",
 		title: "Enjoy Travelling",
 		shortdesc: `Vestibulum vitae volutpat lorem. Aliquam tellus nulla, pharetra ac rutrum in, ultrices
       quis eros. Nulla luctus, leo id sagittis posuere, turpis ex eleifend felis, sed
@@ -19,7 +19,7 @@ export const MainData = [
 const TemplateData = [
 	{
 		id: 0,
-		image: "/winter.jpeg",
+		image: "/Images/winter.jpeg",
 		title: "Place to go on Winter",
 		shortdesc: `Vestibulum vitae volutpat lorem. Aliquam tellus nulla, pharetra ac rutrum in, ultrices
       quis eros. Nulla luctus, leo id sagittis posuere, turpis ex eleifend felis, sed
@@ -34,7 +34,7 @@ const TemplateData = [
 	},
 	{
 		id: 1,
-		image: "/1.jpg",
+		image: "/Images/1.jpg",
 		title: "Place to go on Summer",
 		shortdesc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et augue eu ex bibendum congue. Cras euismod risus posuere consequat suscipit. Vivamus diiukjnjke adksjkajsd dignissim lectus 4rf4fdedr4ecex a arcu. `,
 		longdesc: `Vestibulum ultricies lorem magna, sit amet sagittis lectus finibus eu. Aliquam fermentum purus 
@@ -45,7 +45,7 @@ const TemplateData = [
 	},
 	{
 		id: 2,
-		image: "/2.jpg",
+		image: "/Images/2.jpg",
 		title: "Place to go on Spring",
 		shortdesc: `Vestibulum vitae volutpat lorem. Aliquam tellus nulla, pharetra ac rutrum in, ultrices
         quis eros. Nulla luctus, leo id sagittis posuere, turpis ex eleifend felis, sed

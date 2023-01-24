@@ -15,7 +15,7 @@ export default function Ninjas({ ninjas }) {
 			<h1>About Us</h1>
 			{ninjas.map(ninja => (
 				<Link
-					href={"/ninjas/" + ninja.userid}
+					href={"/Ninjas/" + ninja.userid}
 					key={ninja.userid}
 				>
 					<p>{ninja.title}</p>

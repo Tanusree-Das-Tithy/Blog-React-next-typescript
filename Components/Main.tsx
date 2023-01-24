@@ -18,7 +18,7 @@ export default function Main() {
 				<br />
 				<div className="relative px-16 block lg:flex lg:grid-cols-2 space-x-0 lg:gap-8">
 					<Image
-						src="/main.jpg"
+						src="/Images/main.jpg"
 						alt="main Logo"
 						className=" h-full w-full md:w-1/2 object-cover"
 						width={500}

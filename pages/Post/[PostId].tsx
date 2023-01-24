@@ -4,7 +4,7 @@ import Image from "next/image";
 import TemplateData from "./PostData";
 import { MainData } from "./PostData";
 
-import CommentList from "../Comments/CommentList";
+import CommentList from "../../Components/CommentList";
 import { BrowserRouter } from "react-router-dom";
 const postStyle = "grid ml-20 mr-20 place-items-center mt-10";
 //const inputStyle = "p-3 border-solid border-2 border-slate-400 rounded-md w-1/2 focus:outline-none";

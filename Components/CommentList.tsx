@@ -7,7 +7,7 @@ import {
 	useAddNewCommentMutation,
 	useDeleteCommentMutation,
 	useUpdateCommentMutation,
-} from "./apiSlice";
+} from "../services/apiSlice";
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -15,7 +15,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { DeleteIcon, EditIcon } from "../../Components/Icons";
+import { DeleteIcon, EditIcon } from "./Icons";
 import error from "next/error";
 const inputStyle =
 	" p-1 border-solid border-2 border-slate-400  h-1/2 rounded-md w-2/4 focus:outline-none mb-6";
