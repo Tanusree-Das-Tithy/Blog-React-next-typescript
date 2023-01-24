@@ -10,7 +10,7 @@ export default function Header() {
 		<div className="sticky top-0 z-0 flex gap-6 box-border  h-20 bg-slate-200  p-4 border-4 space-x-8 w-full">
 			<div className="ml-4">
 				<Image
-					src="/headIcon.jpg"
+					src="/Images/headIcon.jpg"
 					alt="Vercel Logo"
 					className="w-20 h-18"
 					width={100}
@@ -20,7 +20,7 @@ export default function Header() {
 			</div>
 			<div className="text-center pt-2">
 				<Link
-					href={"http://localhost:3000/ninjas/1"}
+					href={"http://localhost:3000/Ninjas/1"}
 					className={boxNav}
 				>
 					About Us
@@ -28,7 +28,7 @@ export default function Header() {
 			</div>
 			<div className="text-center pt-2">
 				<Link
-					href={"http://localhost:3000/ninjas/2"}
+					href={"http://localhost:3000/Ninjas/2"}
 					className={boxNav}
 				>
 					PodCast
@@ -36,7 +36,7 @@ export default function Header() {
 			</div>
 			<div className="text-center pt-2">
 				<Link
-					href={"http://localhost:3000/ninjas/3"}
+					href={"http://localhost:3000/Ninjas/3"}
 					className={boxNav}
 				>
 					Meetups
