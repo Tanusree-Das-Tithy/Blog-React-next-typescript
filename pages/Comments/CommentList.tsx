@@ -1,19 +1,22 @@
 /** @format */
 
 import React, { useState } from "react";
+
 import {
 	useGetCommentsQuery,
 	useAddNewCommentMutation,
 	useDeleteCommentMutation,
 	useUpdateCommentMutation,
 } from "./apiSlice";
-import { useSelector, useDispatch } from "react-redux";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { DeleteIcon, EditIcon } from "../../Components/Icons";
+import error from "next/error";
 const inputStyle =
 	" p-1 border-solid border-2 border-slate-400  h-1/2 rounded-md w-2/4 focus:outline-none mb-6";
 
@@ -24,10 +27,28 @@ const schema = yup.object().shape({
 
 const CommentCard = ({ content }) => {
 	const [deleteComment, response] = useDeleteCommentMutation();
-	const [updateComment, response1] = useUpdateCommentMutation();
 
-	const dispatch = useDispatch();
 	const [isEdit, setIsEdit] = useState(false);
+
+	const [updateComment, { isLoading }] = useUpdateCommentMutation();
+
+	const [email, setEmail] = useState(content.email);
+	const [comments, setComments] = useState(content.comment);
+
+	const onEmailChanged = e => setEmail(e.target.value);
+	const onCommentChanged = e => setComments(e.target.value);
+
+	const onSaveClicked = () => {
+		if (email && comments) {
+			console.log({ comments });
+			const newComment = { id: content.id, email: email, comment: comments };
+			// updateComment({ id: content.id, email, comments });
+			updateComment({ comment: newComment });
+
+			// router.push(`/comment/${content.id}`);
+		}
+	};
+
 	return (
 		<div className=" mb-3 d-flex align-items-stretch bg-slate-100 ">
 			<div className=" py-4  ">
@@ -39,14 +60,14 @@ const CommentCard = ({ content }) => {
 					</div>
 					{content.email}
 				</h5>
-				<p className="flex w-full">
+				<div className="flex w-full">
 					<div>
 						<b>
 							Comment &ensp;<span className="mr-10">:</span>
 						</b>
 					</div>
 					{content.comment}
-				</p>
+				</div>
 				<div className="my-2">
 					<button
 						className="bg-slate-300 p-0.5 hover:bg-red-300 mr-5"
@@ -68,19 +89,20 @@ const CommentCard = ({ content }) => {
 							placeholder="Enter new email"
 							type="text"
 							className="focus:outline-none ml-2 mr-4 p-2"
+							onChange={onEmailChanged}
 						/>
 						<input
 							placeholder="updated comment"
 							type="text"
 							className="focus:outline-none p-2"
+							onChange={onCommentChanged}
 						/>
 						<button
 							onClick={() => {
-								setIsEdit(false);
+								onSaveClicked();
 							}}
 							className="ml-4 h-8 w-12 bg-green-300 hover:bg-green-400"
 						>
-							{" "}
 							save
 						</button>
 					</>
@@ -158,21 +180,23 @@ function CommentsList() {
 			</div>
 		);
 	} else if (isGetSuccess) {
-		commentContent = comments.map(item => {
-			return (
-				<CommentCard
-					content={item}
-					key={item.id}
-				/>
-			);
-		});
+		commentContent =
+			Array.isArray(comments) &&
+			comments.map((item: { id: React.Key }) => {
+				return (
+					<CommentCard
+						content={item}
+						key={item.id}
+					/>
+				);
+			});
 	} else if (isGetError) {
 		commentContent = (
 			<div
 				className="alert alert-danger"
 				role="alert"
 			>
-				{getError}
+				{Boolean(getError)}
 			</div>
 		);
 	}
@@ -197,7 +221,10 @@ function CommentsList() {
 									placeholder="example@mail.com"
 									required
 								/>
-								<p className="text-red-600 font-bold">{errors.email?.message}</p>
+								<p className="text-red-600 font-bold">
+									{Boolean(errors["email"]?.message)}
+									{errors.email?.message?.toString()}
+								</p>
 							</div>
 							<div className="flex w-full">
 								<div className="w-1/6">
@@ -205,16 +232,19 @@ function CommentsList() {
 										<strong>Comment</strong>
 									</label>
 								</div>
+
 								<textarea
-									type="text"
 									className={inputStyle}
 									{...register("comment")}
 									id="comment"
-									rows="3"
+									rows={3}
 									placeholder="Enter your comment here"
 									required
 								></textarea>
-								<p className="text-red-600">{errors.comment?.message}</p>
+								<p className="text-red-600 font-bold">
+									{Boolean(errors["comment"]?.message)}
+									{errors.comment?.message?.toString()}
+								</p>
 							</div>
 						</section>
 						<section className="flex ml-44 justify-left ">

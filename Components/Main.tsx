@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./Header";
-import Footer from "./Footer.js";
-import Feature from "./Feature.tsx";
+import Footer from "./Footer";
+import Feature from "./Feature";
 
 export default function Main() {
 	return (
@@ -39,7 +39,7 @@ export default function Main() {
 						<br />
 						<Link
 							className="text-cyan-500 hover:text-cyan-700"
-							href={"http://localhost:3001/Post/main-page"}
+							href={"http://localhost:3000/Post/main-page"}
 						>
 							see more...
 						</Link>

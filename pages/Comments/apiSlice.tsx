@@ -1,20 +1,5 @@
 /** @format */
-/*
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-export const apiSlice = createApi({
-	reducerPath: "apiSlice",
-	baseQuery: fetchBaseQuery({
-		baseUrl: "https://jsonplaceholder.typicode.com",
-	}),
-	tagTypes: ["Post"],
-	endpoints: builder => ({
-		getPosts: builder.query({
-			query: id => `/posts/${id}`,
-		}),
-	}),
-});
-export const { useGetPostsQuery } = apiSlice;
-*/
+
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
 	reducerPath: "apiSlice",
@@ -25,7 +10,7 @@ export const apiSlice = createApi({
 
 	tagTypes: ["Comment"],
 	endpoints: builder => ({
-		getComments: builder.query({
+		getComments: builder.query<Comment, void>({
 			query: () => "/comment",
 			providesTags: ["Comment"],
 		}),
@@ -51,24 +36,14 @@ export const apiSlice = createApi({
 			invalidatesTags: ["Comment"],
 		}),
 		updateComment: builder.mutation({
-			query: ({ id, ...rest }) => ({
-				url: `/comment`,
+			query: ({ comment }) => ({
+				url: `/comment/${comment.id}`,
 
 				method: "PUT",
-				body: rest,
+				body: comment,
 				//credentials: "include",
 			}),
 			invalidatesTags: ["Comment"],
-			async onQueryStarted({ id, ...rest }, { dispatch, queryFulfilled }) {
-				try {
-					const { data: updatedComment } = await queryFulfilled;
-					const patchResult = dispatch(
-						api.util.updateQueryData("getPost", id, draft => {
-							Object.assign(draft, updatedPost);
-						})
-					);
-				} catch {}
-			},
 		}),
 	}),
 });

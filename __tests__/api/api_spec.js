@@ -1,6 +1,6 @@
 /** @format */
 
-const frisby = require("frisby");
+export const frisby = require("frisby");
 /*
 it("should be from sankarchandradas027@gmail.com", function () {
 	return frisby.get("https://63be6aa1585bedcb36acc7d4.mockapi.io/comment/8").expect("status", 200);

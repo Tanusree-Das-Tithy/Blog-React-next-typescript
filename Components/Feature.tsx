@@ -1,10 +1,10 @@
 /** @format */
 
 import Link from "next/link";
-import TemplateData from "../pages/Post/PostData.js";
+import TemplateData from "../pages/Post/PostData";
 import { ImBin } from "react-icons/im";
 import { useState } from "react";
-import Image from "next/image.js";
+import Image from "next/image";
 
 interface SectionLinkProps {
 	template: { id: number; image: string; title: string; shortdesc: string; longdesc: string };
@@ -39,7 +39,7 @@ const SectionLink = ({ template }: SectionLinkProps) => {
 										closeModal();
 									}}
 								>
-									Yes, I'm sure
+									Yes, I am sure
 								</button>
 								<button
 									data-modal-hide="popup-modal"
@@ -89,7 +89,7 @@ const SectionLink = ({ template }: SectionLinkProps) => {
 						</div>
 						<div className="mt-5 md:mb-1 font-bold text-xl h-10 w-full md:h-auto">
 							<Link
-								href={`http://localhost:3001/Post/${slug}`}
+								href={`http://localhost:3000/Post/${slug}`}
 								className=" text-cyan-500 hover:text-cyan-700"
 							>
 								{TemplateData[i].title}

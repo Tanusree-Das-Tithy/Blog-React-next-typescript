@@ -28,8 +28,8 @@
 		"Components/Feature.tsx",
 		"pages/navs/index.js",
 		"pages/navs/[id].js",
-		"pages/ninjas/index.js",
-		"pages/ninjas/[userid].js"
+		"pages/ninjas/index.tsx",
+		"pages/ninjas/[userid].tsx"
 	],
 	"exclude": ["node_modules"]
 }

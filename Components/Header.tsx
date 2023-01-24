@@ -20,7 +20,7 @@ export default function Header() {
 			</div>
 			<div className="text-center mr-2 sm:mr-0 pt-2">
 				<Link
-					href={"http://localhost:3001/ninjas/1"}
+					href={"http://localhost:3000/ninjas/1"}
 					className={boxNav}
 				>
 					About Us
@@ -28,7 +28,7 @@ export default function Header() {
 			</div>
 			<div className="text-center pt-2 mr-2 sm:mr-0">
 				<Link
-					href={"http://localhost:3001/ninjas/2"}
+					href={"http://localhost:3000/ninjas/2"}
 					className={boxNav}
 				>
 					PodCast
@@ -36,18 +36,10 @@ export default function Header() {
 			</div>
 			<div className="text-center pt-2">
 				<Link
-					href={"http://localhost:3001/ninjas/3"}
+					href={"http://localhost:3000/ninjas/3"}
 					className={boxNav}
 				>
 					Meetups
-				</Link>
-			</div>
-			<div className="text-center pt-2">
-				<Link
-					href={"/"}
-					className={boxNav}
-				>
-					Comments
 				</Link>
 			</div>
 		</div>
