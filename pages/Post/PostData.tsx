@@ -50,7 +50,7 @@ const TemplateData = [
 		shortdesc: `Vestibulum vitae volutpat lorem. Aliquam tellus nulla, pharetra ac rutrum in, ultrices
         quis eros. Nulla luctus, leo id sagittis posuere, turpis ex eleifend felis, sed
         vulputate turpis sapien `,
-		longdesc: `desc: Vestibulum ultricies lorem magna, sit amet sagittis lectus finibus eu. Aliquam fermentum purus 
+		longdesc: ` Vestibulum ultricies lorem magna, sit amet sagittis lectus finibus eu. Aliquam fermentum purus 
         ac porttitor cursus. Ut sagittis turpis non felis faucibus dictum. Praesent hendrerit tortor justo, 
         non ultricies sem molestie vitae. Aliquam tellus elit, posuere eu erat quis, pulvinar blandit velit. 
         Suspendisse id lacinia nisl. Sed cursus quam libero, at sollicitudin ante iaculis ut. Sed nec fermentum

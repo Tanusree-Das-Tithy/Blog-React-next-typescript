@@ -112,7 +112,9 @@ const SectionLink = ({ template }: SectionLinkProps) => {
 export default function Feature() {
 	return (
 		<div className="mt-10 mb-1 md:mb-14 px-16">
-			<span className="text-xl md:text-2xl  bg-slate-300"> Featured Posts </span>
+			<Link href={"http://localhost:3000/Blog"}>
+				<span className="text-xl md:text-2xl  bg-slate-300"> Featured Posts </span>
+			</Link>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 mt-5 md:mt-10">
 				{TemplateData.map((template, key) => (
 					<SectionLink

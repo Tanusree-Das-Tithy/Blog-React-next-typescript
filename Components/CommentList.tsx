@@ -100,6 +100,7 @@ const CommentCard = ({ content }) => {
 						<button
 							onClick={() => {
 								onSaveClicked();
+								setIsEdit(false);
 							}}
 							className="ml-4 h-8 w-12 bg-green-300 hover:bg-green-400"
 						>

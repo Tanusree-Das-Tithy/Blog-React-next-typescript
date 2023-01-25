@@ -1,6 +1,7 @@
 /** @format */
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { BuilderProgram } from "typescript";
 export const apiSlice = createApi({
 	reducerPath: "apiSlice",
 	baseQuery: fetchBaseQuery({
@@ -8,7 +9,7 @@ export const apiSlice = createApi({
 		baseUrl: "https://63be6aa1585bedcb36acc7d4.mockapi.io",
 	}),
 
-	tagTypes: ["Comment"],
+	tagTypes: ["Comment", "Header"],
 	endpoints: builder => ({
 		getComments: builder.query<Comment, void>({
 			query: () => "/comment",
@@ -45,6 +46,10 @@ export const apiSlice = createApi({
 			}),
 			invalidatesTags: ["Comment"],
 		}),
+		getHeaders: builder.query<any, any>({
+			query: () => "/header",
+			providesTags: ["Header"],
+		}),
 	}),
 });
 export const {
@@ -52,4 +57,5 @@ export const {
 	useAddNewCommentMutation,
 	useDeleteCommentMutation,
 	useUpdateCommentMutation,
+	useGetHeadersQuery,
 } = apiSlice;
