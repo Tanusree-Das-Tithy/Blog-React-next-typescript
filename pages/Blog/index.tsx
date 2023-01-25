@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import HeaderList from "../../Components/HeaderList";
+import HeaderList from "../../Components/BlogList";
 
 export const index = () => {
 	return (

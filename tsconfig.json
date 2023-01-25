@@ -30,8 +30,9 @@
 		"pages/navs/[id].tsx",
 		"pages/Ninjas/index.tsx",
 		"pages/Ninjas/[userid].tsx",
-		"Components/HeaderList.tsx",
-		"Components/CommentList.tsx"
+		"Components/BlogList.tsx",
+		"Components/CommentList.tsx",
+		"models/Blog.ts"
 	],
 	"exclude": ["node_modules"]
 }

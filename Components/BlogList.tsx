@@ -28,14 +28,14 @@ const HeaderCard = ({ content }) => {
 		</div>
 	);
 };
-function HeaderList() {
+function BlogList() {
 	const {
 		data: blogs,
 		isLoading: isGetLoading,
 		isSuccess: isGetSuccess,
 		isError: isGetError,
 		error: getError,
-	} = useGetHeadersQuery(null);
+	} = useGetHeadersQuery();
 
 	const renderError = (
 		<div
@@ -78,4 +78,4 @@ function HeaderList() {
 		</div>
 	);
 }
-export default HeaderList;
+export default BlogList;

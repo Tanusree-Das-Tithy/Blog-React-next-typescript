@@ -2,6 +2,8 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { BuilderProgram } from "typescript";
+import { Blog, BlogDetail } from "../models/Blog";
+import { Comment, CommentDetail } from "../models/Comment";
 export const apiSlice = createApi({
 	reducerPath: "apiSlice",
 	baseQuery: fetchBaseQuery({
@@ -46,7 +48,7 @@ export const apiSlice = createApi({
 			}),
 			invalidatesTags: ["Comment"],
 		}),
-		getHeaders: builder.query<any, any>({
+		getHeaders: builder.query<Blog, void>({
 			query: () => "/header",
 			providesTags: ["Header"],
 		}),
